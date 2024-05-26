@@ -48,10 +48,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: node-app
-          path: ./node-app  # Extrae el artefacto en un directorio específico
+          path: ./node-app  # Extracts the artifact into a specific directory
 
       - name: List directory contents
-        run: ls -R ./node-app  # Lista el contenido del directorio extraído
+        run: ls -R ./node-app  # Lists the content of the extracted directory
 
       - name: Login to Azure
         uses: azure/login@v1
@@ -66,5 +66,4 @@ jobs:
         with:
           app-name: '2Rparrila'
           slot-name: 'Production'
-          package: ./node-app/foodhut/public_html  # Asegúrate de que esta ruta es correcta
-
+          package: ./node-app  # Ensure this is the correct path
