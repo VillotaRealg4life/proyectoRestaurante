@@ -65,5 +65,5 @@ jobs:
         with:
           app-name: '2Rparrila'
           slot-name: 'Production'
-          package: foodhut/public_html
+          package: foodhut/
 
