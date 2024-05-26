@@ -41,7 +41,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -50,7 +50,7 @@ jobs:
           name: node-app
 
       - name: List directory contents
-        run: ls -R
+        run: ls -R foodhut/public_html
 
       - name: Login to Azure
         uses: azure/login@v1
@@ -65,5 +65,5 @@ jobs:
         with:
           app-name: '2Rparrila'
           slot-name: 'Production'
-          package: foodhut
+          package: foodhut/public_html
 
